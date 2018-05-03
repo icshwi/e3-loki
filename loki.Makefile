@@ -60,6 +60,7 @@ include $(E3_REQUIRE_TOOLS)/driver.makefile
 # HEADERS += $(APPSRC)/aCalcPostfix.h
 # HEADERS += $(DBDINC_HDRS)
 
+HEADERS+=$(wildcard *.h)
 
 # SOURCES += $(APPSRC)/sCalcPostfix.c
 # SOURCES += $(APPSRC)/sCalcPerform.c
