@@ -1,0 +1,4 @@
+[submodule "m-epics-loki"]
+	path = m-epics-loki
+	url = https://bitbucket.org/europeanspallationsource/m-epics-loki
+	ignore = all

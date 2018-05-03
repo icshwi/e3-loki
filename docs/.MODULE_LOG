@@ -1,0 +1,12 @@
+USER : joaopaulomartins
+TIME : 2018May03-1121-41CEST
+>> 
+EPICS_MODULE_NAME  :                                                          loki
+E3_MODULE_SRC_PATH :                                                  m-epics-loki
+EPICS_MODULE_URL   :                https://bitbucket.org/europeanspallationsource
+E3_TARGET_URL      :                                     https://github.com/icshwi
+>> 
+e3 module name     :                                                       e3-loki
+e3 module url full :   https://bitbucket.org/europeanspallationsource/m-epics-loki
+e3 target url full :                             https://github.com/icshwi/e3-loki
+>> 
