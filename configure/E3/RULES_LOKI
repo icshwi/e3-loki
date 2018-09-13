@@ -1,23 +1,12 @@
-
-# Create Symbolic links for all nds3 headers
-LOKI_HEADERS_TARGET:=$(E3_MODULES_INSTALL_LOCATION_INC)/loki
-
-LOKI_HEADERS=$(wildcard $(E3_MODULE_SRC_PATH)/*.h)
-
-
-headerlinks: mkdir_loki $(LOKI_HEADERS)
+# I don't like to do this, but without changing driver.Makefile heavily,
+# it is only the way to do this. 
+# We have to move all pv/pva headers to its own include/loki directory
+# 
 
 
-mkdir_loki:
-	$(SUDO) mkdir -p  $(LOKI_HEADERS_TARGET)
+loki:
+	$(SUDO) install -m 755 -d $(E3_MODULES_INSTALL_LOCATION_INC)/loki
+	cd $(E3_MODULES_INSTALL_LOCATION_INC) && $(SUDO) mv *.h loki/
 
 
-$(LOKI_HEADERS):
-	@printf "Symbolic link ... %44s >>> %40s \n" "$@" "$(LOKI_HEADERS_TARGET)/$(notdir $@)"
-	@$(SUDO) ln -snf ../$(notdir $@)  $(LOKI_HEADERS_TARGET)/$(notdir $@)	
-
-.PHONY: headerlinks  mkdir_loki $(LOKI_HEADERS)
-
-
-# VARS_EXCLUDES+=LOKI_HEADERS_TARGET
-# VARS_EXCLUDES+=LOKI_HEADERS
+.PHONY: loki
