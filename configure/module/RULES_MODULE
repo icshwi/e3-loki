@@ -5,8 +5,8 @@ db: conf
 	$(QUIET) $(E3_MODULE_MAKE_CMDS) db
 
 hdrs:
-#	$(SUDO) install -m 755 -d $(E3_MODULES_INSTALL_LOCATION_INC)/pv
-#	cd $(E3_MODULES_INSTALL_LOCATION_INC) && $(SUDO) mv *.h pv/
+	$(SUDO) install -m 755 -d $(E3_MODULES_INSTALL_LOCATION_INC)/loki
+	cd $(E3_MODULES_INSTALL_LOCATION_INC) && $(SUDO) mv *.h loki/
 
 epics:
 	$(QUIET)echo "EPICS_BASE=$(EPICS_BASE)"        > $(TOP)/$(E3_MODULE_SRC_PATH)/configure/RELEASE
